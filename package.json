@@ -1,0 +1,14 @@
+{
+  "name":       "url-forwarding",
+  "version":    "0.0.1",
+  "private":    true,
+  "scripts": {
+    "start":    "node app"
+  },
+  "dependencies": {
+    "express":        "3.0.0rc2",
+    "express-liquid": "*",
+    "connect-redis":  ">= 1.4.1",
+    "redis":          ">= 0.7.2"
+  }
+}
