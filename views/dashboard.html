@@ -1,0 +1,25 @@
+<h2>域名：{{domain}}</h2>
+<a href="/signout">注销</a><br>
+请确保要转发的域名已经设置CNAME或A记录到 <strong>{{cname}}</strong>
+<hr>
+{% if error %}
+<p>{{error}}
+{% endif %}
+<p>
+  <form action="/url/add" method="POST">
+    域名：<input name="childdomain" type="text">.{{domain}}<br>
+    URL：<input name="url" type="text"><br>
+    <input name="code" type="radio" value="301" checked="checked">永久重定向
+    <input name="code" type="radio" value="302">临时重定向
+    <br>
+    <input type="submit" value="添加">
+  </form>
+</p>
+<hr>
+<p>
+  {% for item in myUrls %}
+  <div>
+    {{item.domain}} => {{item.code}} {{item.url}}
+  </div>
+  {% endfor %}
+</p>

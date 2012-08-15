@@ -1,0 +1,15 @@
+{% if error %}
+<p>
+  <h1>出错：</h1>
+  <pre>{{error}}</pre>
+</p>
+{% else %}
+<p>
+  {% if hasRegistered %}
+  <h1>该域名已经注册，若要更改密码，请将域名{{domain}}的TXT记录设置为以下字符串：<h1>
+  {% else %}
+  <h1>请将域名{{domain}}的TXT记录设置为以下字符串，待解析生效之后即可：<h1>
+  {% endif %}
+  {{txt}}
+</p>
+{% endif %}

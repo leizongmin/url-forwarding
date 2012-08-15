@@ -10,6 +10,7 @@ var path = require('path');
 var RedisStore = require('connect-redis')(express);
 var expressLiquid = require('express-liquid');
 var config = require('./config');
+var urlForwarding = require('./middlewares/url-forwarding');
 
 var app = express();
 
@@ -20,6 +21,7 @@ app.configure(function () {
   app.set('view engine', 'html');
   app.engine('html', expressLiquid());
   app.locals.layout = true;
+  app.use(urlForwarding);
   app.use(express.favicon());
   app.use(express.logger(config.logger));
   app.use(express.bodyParser());

@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>注册</title>
-</head>
-<body>
-  <form action="/singup" method="POST">
-    域名：
-    <input type="text" placeholder="如：ucdok.com">
+<p>
+  <h2>注册</h2>
+  <form action="/signup" method="POST">
+    域名：<input name="domain" type="text" placeholder="如：ucdok.com"><br>
+    密码：<input name="password" type="password"><br>
     <input type="submit" value="下一步">
   </form>
-</body>
-</html>
+</p>
+<p>
+  <h2>登录</h2>
+  <form action="/signin" method="POST">
+    域名：<input name="domain" type="text" placeholder="如：ucdok.com"><br>
+    密码：<input name="password" type="password"><br>
+    <input type="submit" value="登录">
+  </form>
+</p>
